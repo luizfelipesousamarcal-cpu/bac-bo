@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Painel Estatístico Bac Bo</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header>
+    <h1>📊 Painel Estatístico Bac Bo</h1>
+</header>
+
+<div class="container">
+
+    <!-- Registrar Resultado -->
+    <div class="card">
+
+        <h2>Registrar Resultado</h2>
+
+        <div class="buttons">
+            <button onclick="addResult('PLAYER')">PLAYER</button>
+            <button onclick="addResult('BANKER')">BANKER</button>
+            <button onclick="addResult('TIE')">TIE</button>
+        </div>
+
+        <button
+            onclick="limparHistorico()"
+            style="background:#d32f2f;color:white;width:100%;margin-top:12px;padding:12px;border:none;border-radius:10px;font-size:16px;">
+            🗑️ Limpar Histórico
+        </button>
+
+    </div>
+
+    <!-- Estatísticas -->
+    <div class="card">
+
+        <h2>📊 Estatísticas</h2>
+
+        <p>PLAYER: <span id="player">0</span></p>
+        <p>BANKER: <span id="banker">0</span></p>
+        <p>TIE: <span id="tie">0</span></p>
+
+    </div>
+
+    <!-- Sugestão -->
+    <div class="card">
+
+        <h2>🎯 SUGESTÃO</h2>
+
+        <h1 id="signal" style="text-align:center;color:#22c55e;">
+            Aguardando dados...
+        </h1>
+
+        <br>
+
+        <strong>Confiança</strong>
+
+        <div style="background:#334155;height:20px;border-radius:20px;overflow:hidden;margin-top:8px;">
+
+            <div id="confidenceBar"
+                 style="width:0%;height:100%;background:#22c55e;transition:.5s;">
+            </div>
+
+        </div>
+
+        <p id="confidenceText"
+           style="text-align:center;font-size:18px;margin-top:10px;">
+            0%
+        </p>
+
+        <hr style="margin:18px 0;">
+
+        <strong>📋 Motivos</strong>
+
+        <ul id="signalReasons">
+
+            <li>Aguardando dados...</li>
+
+        </ul>
+
+    </div>
+
+    <!-- Histórico -->
+    <div class="card">
+
+        <h2>📜 Últimos Resultados</h2>
+
+        <ul id="history"></ul>
+
+    </div>
+
+    <!-- Gráfico -->
+    <div class="card">
+
+        <h2>📈 Gráfico</h2>
+
+        <canvas id="chart"></canvas>
+
+    </div>
+
+    <!-- Painel de análise -->
+    <div class="card">
+
+        <h2>📈 Análise</h2>
+
+        <p><strong>Rodadas:</strong>
+            <span id="analiseRodadas">0</span>
+        </p>
+
+        <p><strong>Sequência:</strong>
+            <span id="sequenciaAtual">-</span>
+        </p>
+
+        <p><strong>Status:</strong></p>
+
+        <p id="statusAnalise">
+            ⚪ Aguardando dados...
+        </p>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
